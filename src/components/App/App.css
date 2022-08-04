@@ -2,18 +2,42 @@
   text-align: center;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+  /* background-color: #DFE8DB; */
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: url('https://w0.peakpx.com/wallpaper/638/539/HD-wallpaper-hogwarts-legacy-ultra-movies-harry-potter-videogame-games-ps4-pc-2021-ps5-hogwarts-legacy.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
 } */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+} */
+
+main {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,11 +46,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
+/* 
 .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {

@@ -15,17 +15,18 @@ const Characters = ( { characters }) => {
       name={character.character}
       imageUrl={character.image}
 
-      nickname={character.nickname}
-      hogwartsStudent={character.hogwartsStudent}
-      hogwartsHouse={character.hogwartsHouse}
-      interpretedBy={character.interpretedBy}
-      child={character.child}
+      // nickname={character.nickname}
+      // hogwartsStudent={character.hogwartsStudent}
+      // hogwartsHouse={character.hogwartsHouse}
+      // interpretedBy={character.interpretedBy}
+      // child={character.child}
 
       />
     );
   });
   return (
-    <section>
+    <section className='characters'>
+
       {charactersCard}
     </section>
     

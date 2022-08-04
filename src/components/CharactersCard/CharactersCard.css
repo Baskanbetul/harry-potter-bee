@@ -1,0 +1,13 @@
+.characters-card {
+   width: 20vw;
+  height: 50vh;
+}
+.character-poster {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: auto;
+  grid-row-gap: 60vh;
+  grid-column-gap: 4vw;
+  margin-top: 80px;
+  margin-left: 30px;
+}
