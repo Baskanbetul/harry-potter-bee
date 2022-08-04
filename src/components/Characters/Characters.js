@@ -17,7 +17,7 @@ const Characters = ( { characters }) => {
 
       nickname={character.nickname}
       hogwartsStudent={character.hogwartsStudent}
-      hogwartsHouse={character.higwartsHouse}
+      hogwartsHouse={character.hogwartsHouse}
       interpretedBy={character.interpretedBy}
       child={character.child}
 
