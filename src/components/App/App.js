@@ -1,12 +1,9 @@
-import React, { Component } from 'react'
-import Characters from '../Characters'
+import React, { useState } from 'react'
+import './App.css';
+import Characters from '../Characters/Characters';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      characters: []
-    }
+const App = () => {
+ const [ characters, setCharacters] = useState([])
   }
 
   componentDidMount = () => {
