@@ -1,28 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
+// import Characters from '../Characters/Characters';
+import { getCharacters } from '../../apiCalls'
 import Characters from '../Characters/Characters';
 
 const App = () => {
  const [ characters, setCharacters] = useState([])
-  }
-
-  componentDidMount = () => {
-    return fetch('https://fedeperin-harry-potter-api-en.herokuapp.com/characters')
-    .then(res =>res.json())
-    .then(data => {
-      this.setState({ characters : data})
+  
+  useEffect(() => {
+    getCharacters()
+    .then(data => { 
+      setCharacters(...characters , data)
+      // console.log(data, "DATA")
     })
-  }
-
-  render() {
-    return (
-      <main className='App'>
+  }, [])
+  // {console.log(characters, "cha")}
+  
+  return (
+    <main className='App'>
 
       <h1>Welcome the Hogwarts</h1>
       <h2>Select Your Character</h2>
+      <Characters characters={characters} />
       </main>
     )
-  }
 }
+
+
 
 export default App;

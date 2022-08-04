@@ -1,22 +1,35 @@
-// import React from 'react';
-// import CharactersCard from '../CharactersCard/CharactersCard';
-// import './Characters.css';
+import React from 'react';
+import './Characters.css';
+import CharactersCard from '../CharactersCard/CharactersCard';
 
-// const Characters = ( { character }) => {
-//   const charactersCard = characters.map(character => {
-//     console.log(characters)
-//     return (
-//       <CharactersCard 
-//       id={character.id}
-//       key={character.id}
-//       name={character.name}
-//       imageUrl={character.image}
-//       />
-//     );
-//   });
-//   return (
-//     <div className='characters-container'></div>
-//   )
-// }
+const Characters = ( { characters }) => {
+  // console.log(characters,"CHA")
+  const charactersCard = characters.map(character => {
+    // console.log(character,"CHARACTER")
 
-// export default Characters;
+    console.log(character.hogwartsStudent, "ID")
+    return (
+      <CharactersCard 
+      id={character.id}
+      key={character.id}
+      name={character.character}
+      imageUrl={character.image}
+
+      nickname={character.nickname}
+      hogwartsStudent={character.hogwartsStudent}
+      hogwartsHouse={character.higwartsHouse}
+      interpretedBy={character.interpretedBy}
+      child={character.child}
+
+      />
+    );
+  });
+  return (
+    <section>
+      {charactersCard}
+    </section>
+    
+  )
+}
+
+export default Characters;
