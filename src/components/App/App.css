@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 html {
   width: 100%;
@@ -13,7 +13,7 @@ body{
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: url('https://w0.peakpx.com/wallpaper/638/539/HD-wallpaper-hogwarts-legacy-ultra-movies-harry-potter-videogame-games-ps4-pc-2021-ps5-hogwarts-legacy.jpg') no-repeat center center fixed;
+  background: url('https://w0.peakpx.com/wallpaper/821/266/HD-wallpaper-hogwarts-castle-harry-potter-and-the-chamber-of-secrets.jpg') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
 }
