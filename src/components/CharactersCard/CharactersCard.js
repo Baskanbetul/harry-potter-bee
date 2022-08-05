@@ -6,7 +6,7 @@ const CharactersCard = ({ name, imageUrl, id, nickname, selectCharacter }) => {
   // console.log(hogwartsStudent, "HOGSTU")
   return (
     <div className='characters-card'>
-      {/* <Link to ={`/${nickname}${id}`}> */}
+      {/* <Link to ={`/${nickname}`}> */}
       <Link to ='/details'>
       <img className='character-poster' 
       id={id}
@@ -21,11 +21,3 @@ const CharactersCard = ({ name, imageUrl, id, nickname, selectCharacter }) => {
 }
 
 export default CharactersCard;
-
-{/* <p>Nickname:{nickname}</p> */}
-{/* <p>Is {name} a hogwarts student?:{hogwartsStudent.toString()}</p> */}
-{/* <p>{name}' house:{hogwartsHouse}</p> */}
-{/* <p>Interpreted By:{interpretedBy}</p> */}
-{/* <p>{child[0]} {child[1]} {child[2]}</p> */}
-
-// style='width: fit-content'

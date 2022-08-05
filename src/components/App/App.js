@@ -24,16 +24,10 @@ useEffect(() => {
 }, [])
 
 const selectCharacter = (event) => {
-  // console.log(event.target.id,"EVENT")
-  //  characters.find(character => event.target.id === character.id )
   return characters.find(character => {
-    // console.log(character.id)
     if (parseInt(event.target.id) === character.id) {
       setSingleCharacter(character)
-    }
-    // ?event.target.id === character.id :
-    // setSingleCharacter(character)
-    
+    }  
   })
 }
 
@@ -42,37 +36,34 @@ const addFavoriteCharacter = (character) => {
 }
 
 const removeFavorite = (id) => {
-  // console.log(id, "ID")
-    return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
+  return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
 }
 
-
-
-    // console.log("FAVCARA",favoriteCharacters)
-  return (
-  //  <Switch>
-    <>
+return (
+  <>
       <Header />
       <main className='App'>
+   <Switch>
         <Route exact path='/'>
             <Characters characters={characters} selectCharacter={selectCharacter}/>
         </Route>
         {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
-        <Route exact path={'/details'}>
-          <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
-        </Route>
+        <Route exact path={'/details'} render={() => {
+           return !singleCharacter ? 'loading' : <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
+        }}/>
+          {/* <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/> */}
+        {/* </Route> */}
         <Route exact path='/favorites'>
-          {/* {console.log(favoriteCharacters.length, "LENGTH")} */}
-        { !favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼</h2>: 
+        { !favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼 
+          
+        </h2>: 
         //if it is false not zerooooooo, zero it false value 
         <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>
         }
         </Route>
-        
-          {/* if favorites empty  */}
+     </Switch>
       </main>
     </>
-    // </Switch>
     )
 }
 
