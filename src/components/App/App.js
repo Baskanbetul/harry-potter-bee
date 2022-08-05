@@ -5,10 +5,12 @@ import Characters from '../Characters/Characters';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
+import Favorites from '../Favorites/Favorites';
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
  const [ singleCharacter,  setSingleCharacter ] = useState({})
+ const [ favoriteCharacters, setFavoriteCharacters ] = useState([])
 //  const [isError, setIsError] = useState(false)
 
 // const selectCharacter = async () => {
@@ -20,34 +22,41 @@ const App = () => {
 //     setCharacters(...characters , data)
 //   }
 // }
-
-
 // useEffect(() => {
 //   selectCharacter()
 // }, [])
 
-  useEffect(() => {
-    getCharacters()
-    .then(data => { 
-      setCharacters(...characters , data)
-    })
-  }, [])
+useEffect(() => {
+  getCharacters()
+  .then(data => { 
+    setCharacters(...characters , data)
+  })
+}, [])
 
-  const selectCharacter = (event) => {
-    // console.log(event.target.id,"EVENT")
-    //  characters.find(character => event.target.id === character.id )
-    return characters.find(character => {
-      // console.log(singleCharacter)
-      if (event.target.id === character.id) {
-        setSingleCharacter(characters)
-      }
-      // ?event.target.id === character.id :
-      //   setSingleCharacter(characters)
-      
-    })
-  }
-  
+const selectCharacter = (event) => {
+  // console.log(event.target.id,"EVENT")
+  //  characters.find(character => event.target.id === character.id )
+  return characters.find(character => {
+    // console.log(character.id)
+    if (parseInt(event.target.id) === character.id) {
+      setSingleCharacter(character)
+    }
+    // ?event.target.id === character.id :
+    // setSingleCharacter(character)
+    
+  })
+}
 
+const addFavoriteCharacter = (character) => {
+  setFavoriteCharacters([ ...favoriteCharacters, character ])
+}
+
+const removeFavorite = (id) => {
+  return filteredFavorites = favorites.filter(favorite => id !== favorite.id)
+  setFavoriteCharacters(filteredFavorites)
+}
+
+    // console.log("FAVCARA",favoriteCharacters)
   return (
   //  <Switch>
     <>
@@ -58,8 +67,10 @@ const App = () => {
         </Route>
         {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
         <Route path={'/details'}>
-          <DetailsCard singleCharacter={singleCharacter}/>
+          <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
         </Route>
+        <Favorites removeFavorite={removeFavorite}/>
+
       </main>
     </>
     // </Switch>

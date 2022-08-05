@@ -9,6 +9,7 @@ const CharactersCard = ({ name, imageUrl, id, nickname, selectCharacter }) => {
       {/* <Link to ={`/${nickname}${id}`}> */}
       <Link to ='/details'>
       <img className='character-poster' 
+      id={id}
       src={imageUrl} alt={`${name} name`} 
       onClick={(event) => selectCharacter(event)} ></img>
       {/* <p id="borderimg">border-image: url(border.png) 30 round;</p> */}
