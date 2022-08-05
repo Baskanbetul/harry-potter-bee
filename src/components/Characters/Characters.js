@@ -1,13 +1,14 @@
 import React from 'react';
 import './Characters.css';
 import CharactersCard from '../CharactersCard/CharactersCard';
+import DetailsCard from '../DetailsCard/DetailsCard';
 
 const Characters = ( { characters, selectCharacter }) => {
   // console.log(characters,"CHA")
   const charactersCard = characters.map(character => {
     // console.log(character,"CHARACTER")
 
-    console.log(character.hogwartsStudent, "ID")
+    // console.log(character.hogwartsStudent, "ID")
     return (
       <CharactersCard 
       id={character.id}

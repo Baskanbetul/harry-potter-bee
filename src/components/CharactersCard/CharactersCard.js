@@ -6,9 +6,13 @@ const CharactersCard = ({ name, imageUrl, id, nickname, selectCharacter }) => {
   // console.log(hogwartsStudent, "HOGSTU")
   return (
     <div className='characters-card'>
-      <Link to ={`/${nickname}${id}`}>
-      <img className='character-poster' src={imageUrl} alt={`${name} name`} onClick={(event) => selectCharacter(event)}></img>
-      <p>Name:{name}</p>
+      {/* <Link to ={`/${nickname}${id}`}> */}
+      <Link to ='/details'>
+      <img className='character-poster' 
+      src={imageUrl} alt={`${name} name`} 
+      onClick={(event) => selectCharacter(event)} ></img>
+      {/* <p id="borderimg">border-image: url(border.png) 30 round;</p> */}
+      <p className='name'>{name}</p>
     </Link>
     </div>
   
@@ -22,3 +26,5 @@ export default CharactersCard;
 {/* <p>{name}' house:{hogwartsHouse}</p> */}
 {/* <p>Interpreted By:{interpretedBy}</p> */}
 {/* <p>{child[0]} {child[1]} {child[2]}</p> */}
+
+// style='width: fit-content'

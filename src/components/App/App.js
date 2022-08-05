@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { getCharacters } from '../../apiCalls';
 import Characters from '../Characters/Characters';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
+import DetailsCard from '../DetailsCard/DetailsCard';
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
-//  const [ singleCharacter,  setSingleCharacter ] = useState('')
+ const [ singleCharacter,  setSingleCharacter ] = useState({})
 //  const [isError, setIsError] = useState(false)
 
 // const selectCharacter = async () => {
@@ -25,7 +26,6 @@ const App = () => {
 //   selectCharacter()
 // }, [])
 
-
   useEffect(() => {
     getCharacters()
     .then(data => { 
@@ -35,23 +35,36 @@ const App = () => {
 
   const selectCharacter = (event) => {
     // console.log(event.target.id,"EVENT")
-    return characters.find(character => event.target.id === character.id )
+    //  characters.find(character => event.target.id === character.id )
+    return characters.find(character => {
+      // console.log(singleCharacter)
+      if (event.target.id === character.id) {
+        setSingleCharacter(characters)
+      }
+      // ?event.target.id === character.id :
+      //   setSingleCharacter(characters)
+      
+    })
   }
   
 
   return (
+  //  <Switch>
     <>
-    <Header />
-    
-    <Route path='/'>
+      <Header />
       <main className='App'>
-        <Characters characters={characters} selectCharacter={selectCharacter}/>
+        <Route exact path='/'>
+            <Characters characters={characters} selectCharacter={selectCharacter}/>
+        </Route>
+        {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
+        <Route path={'/details'}>
+          <DetailsCard singleCharacter={singleCharacter}/>
+        </Route>
       </main>
-    </Route>
     </>
+    // </Switch>
     )
 }
-
 
 
 export default App;

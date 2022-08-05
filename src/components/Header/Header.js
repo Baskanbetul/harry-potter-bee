@@ -3,10 +3,10 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <main className='App'>
+    <header className='hogwarts'>
      <h1>Welcome the Hogwarts</h1>
-     <p>Select Your Character</p>
-    </main>
+     <h3>Select Your Character</h3>
+    </header>
   )
 }
 
