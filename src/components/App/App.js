@@ -6,7 +6,6 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
-import CheckFavorites from '../CheckFavorites/CheckFavorites';
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
@@ -49,7 +48,7 @@ const removeFavorite = (id) => {
   return (
   //  <Switch>
     <>
-      <Header/>
+      <Header />
       <main className='App'>
         <Route exact path='/'>
             <Characters characters={characters} selectCharacter={selectCharacter}/>
@@ -61,9 +60,9 @@ const removeFavorite = (id) => {
         <Route exact path='/favorites'>
         <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>
         </Route>
-        <Route exact path='/checkFavorites'>
+        {/* <Route exact path='/checkFavorites'>
           <CheckFavorites checkFavorites={checkFavorites} removeFavorite={removeFavorite}/>
-        </Route>
+        </Route> */}
 
       </main>
     </>

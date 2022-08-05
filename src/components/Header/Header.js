@@ -1,14 +1,18 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
-const Header = ({ checkFavorites }) => {
+const Header = () => {
   return (
-    <header className='hogwarts'>
-     <h1>Welcome the Hogwarts</h1>
-     <h3>Select Your Character</h3>
-     <button onClick={() => checkFavorites(favoriteCharacters)}>Favorites</button>
-    </header>
-    
+    <>
+      <header className='hogwarts'>
+        <h1>Welcome the Hogwarts</h1>
+        <h3>Select Your Character</h3>
+      </header>
+      <Link to='/favorites'>
+        <button>Favorites</button>
+      </Link>
+     </>
   )
 }
 
