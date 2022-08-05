@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CharactersCard.css';
 
-const CharactersCard = ({ name, imageUrl, nickname, hogwartsStudent, hogwartsHouse, interpretedBy, child}) => {
-  console.log(hogwartsStudent, "HOGSTU")
+const CharactersCard = ({ name, imageUrl, id, nickname, selectCharacter }) => {
+  // console.log(hogwartsStudent, "HOGSTU")
   return (
     <div className='characters-card'>
+      <Link to ={`/${nickname}${id}`}>
+      <img className='character-poster' src={imageUrl} alt={`${name} name`} onClick={(event) => selectCharacter(event)}></img>
       <p>Name:{name}</p>
-        <img className='character-poster' src={imageUrl} alt={`${name} name`}></img>
-      </div>
+    </Link>
+    </div>
   
   )
 }

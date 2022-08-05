@@ -2,7 +2,7 @@ import React from 'react';
 import './Characters.css';
 import CharactersCard from '../CharactersCard/CharactersCard';
 
-const Characters = ( { characters }) => {
+const Characters = ( { characters, selectCharacter }) => {
   // console.log(characters,"CHA")
   const charactersCard = characters.map(character => {
     // console.log(character,"CHARACTER")
@@ -14,19 +14,17 @@ const Characters = ( { characters }) => {
       key={character.id}
       name={character.character}
       imageUrl={character.image}
-
-      // nickname={character.nickname}
-      // hogwartsStudent={character.hogwartsStudent}
-      // hogwartsHouse={character.hogwartsHouse}
-      // interpretedBy={character.interpretedBy}
-      // child={character.child}
-
+      selectCharacter={selectCharacter}
+      nickname={character.nickname}
+      hogwartsStudent={character.hogwartsStudent}
+      hogwartsHouse={character.hogwartsHouse}
+      interpretedBy={character.interpretedBy}
+      child={character.child}
       />
     );
   });
   return (
     <section className='characters'>
-
       {charactersCard}
     </section>
     
