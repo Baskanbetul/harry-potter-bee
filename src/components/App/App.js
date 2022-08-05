@@ -11,11 +11,15 @@ const App = () => {
  const [ characters, setCharacters ] = useState([])
  const [ singleCharacter,  setSingleCharacter ] = useState({})
  const [ favoriteCharacters, setFavoriteCharacters ] = useState([])
+ const [ error, setError ] = useState(false)
 
 useEffect(() => {
   getCharacters()
   .then(data => { 
     setCharacters(...characters , data)
+  })
+  .catch(error => {
+    setError(true)
   })
 }, [])
 
@@ -58,12 +62,14 @@ const removeFavorite = (id) => {
           <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
         </Route>
         <Route exact path='/favorites'>
+          {/* {console.log(favoriteCharacters.length, "LENGTH")} */}
+        { !favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼</h2>: 
+        //if it is false not zerooooooo, zero it false value 
         <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>
+        }
         </Route>
-        {/* <Route exact path='/checkFavorites'>
-          <CheckFavorites checkFavorites={checkFavorites} removeFavorite={removeFavorite}/>
-        </Route> */}
-
+        
+          {/* if favorites empty  */}
       </main>
     </>
     // </Switch>
