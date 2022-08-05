@@ -1,25 +1,29 @@
 import React from "react";
 import './Favorites.css';
+import { Link } from "react-router-dom";
 
-const Favorites = ({ favoriteCharacters, removeFavorite }) => {
+const Favorites = ({ favoriteCharacters, removeFavorite, id }) => {
   // console.log(favoriteCharacters)
+  const formatCharacters = favoriteCharacters.map(favoriteCharacter => {
+    return (
+     <div key={favoriteCharacter.id}>
+      <img className='character-poster' src={favoriteCharacter.image} alt={`${favoriteCharacter.name} information`}/>
+      <p>Name: {favoriteCharacter.character}</p>
+      <p>Nickname: {favoriteCharacter.nickname}</p>
+      <p>Is {favoriteCharacter.character} a hogwarts student?:{favoriteCharacter.hogwartsStudent ? 'YES' : 'NO'}</p>
+      <p>{favoriteCharacter.character}' house:{favoriteCharacter.hogwartsHouse}</p>
+      <p>Interpreted By:{favoriteCharacter.interpretedBy}</p>
+      <p>{favoriteCharacter.child[0]} {favoriteCharacter.child[1]} {favoriteCharacter.child[2]}</p>
+      <button className="trash-btn" onClick={() => removeFavorite(favoriteCharacter.id)}>🗑</button>
+     </div>
+    )
+  })
   return (
    <div className="favorites">
-       <img className='character-poster' src={favoriteCharacters.image} alt={`${favoriteCharacters.name} information`}/>
-      <p>Name: {favoriteCharacters.character}</p>
-      <p>Nickname: {favoriteCharacters.nickname}</p>
-      <p>Is {favoriteCharacters.character} a hogwarts student?:{favoriteCharacters.hogwartsStudent ? 'YES' : 'NO'}</p>
-      <p>{favoriteCharacters.character}' house:{favoriteCharacters.hogwartsHouse}</p>
-      <p>Interpreted By:{favoriteCharacters.interpretedBy}</p>
-      <p>{favoriteCharacters.child[0]} {favoriteCharacters.child[1]} {favoriteCharacters.child[2]}</p> */}
-    
-    
+    {formatCharacters}
     <Link to ='/'>
     <button>GO BACK</button>
     </Link>
-    <div className='favorite-container'>
-      <button className="trash-btn" onClick={() => removeFavorite(id)}>🗑</button>
-    </div> 
     </div>
   )
 }

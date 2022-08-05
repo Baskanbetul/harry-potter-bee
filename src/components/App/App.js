@@ -6,25 +6,12 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
+import CheckFavorites from '../CheckFavorites/CheckFavorites';
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
  const [ singleCharacter,  setSingleCharacter ] = useState({})
  const [ favoriteCharacters, setFavoriteCharacters ] = useState([])
-//  const [isError, setIsError] = useState(false)
-
-// const selectCharacter = async () => {
-//   const url = 'https://fedeperin-harry-potter-api-en.herokuapp.com/characters'
-//   // setIsError(false)
-//   try {
-//     const response = await fetch(url)
-//     const character = await response.json()
-//     setCharacters(...characters , data)
-//   }
-// }
-// useEffect(() => {
-//   selectCharacter()
-// }, [])
 
 useEffect(() => {
   getCharacters()
@@ -52,24 +39,31 @@ const addFavoriteCharacter = (character) => {
 }
 
 const removeFavorite = (id) => {
-  return filteredFavorites = favorites.filter(favorite => id !== favorite.id)
-  setFavoriteCharacters(filteredFavorites)
+  // console.log(id, "ID")
+    return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
 }
+
+
 
     // console.log("FAVCARA",favoriteCharacters)
   return (
   //  <Switch>
     <>
-      <Header />
+      <Header/>
       <main className='App'>
         <Route exact path='/'>
             <Characters characters={characters} selectCharacter={selectCharacter}/>
         </Route>
         {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
-        <Route path={'/details'}>
+        <Route exact path={'/details'}>
           <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
         </Route>
-        <Favorites removeFavorite={removeFavorite}/>
+        <Route exact path='/favorites'>
+        <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>
+        </Route>
+        <Route exact path='/checkFavorites'>
+          <CheckFavorites checkFavorites={checkFavorites} removeFavorite={removeFavorite}/>
+        </Route>
 
       </main>
     </>

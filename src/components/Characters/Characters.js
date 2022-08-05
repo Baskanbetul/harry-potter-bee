@@ -15,12 +15,12 @@ const Characters = ( { characters, selectCharacter }) => {
       key={character.id}
       name={character.character}
       imageUrl={character.image}
-      selectCharacter={selectCharacter}
       nickname={character.nickname}
       hogwartsStudent={character.hogwartsStudent}
       hogwartsHouse={character.hogwartsHouse}
       interpretedBy={character.interpretedBy}
       child={character.child}
+      selectCharacter={selectCharacter}
       />
     );
   });
