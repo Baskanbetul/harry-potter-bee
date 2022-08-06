@@ -6,31 +6,28 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
-import CheckFavorites from '../CheckFavorites/CheckFavorites';
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
  const [ singleCharacter,  setSingleCharacter ] = useState({})
  const [ favoriteCharacters, setFavoriteCharacters ] = useState([])
+ const [ error, setError ] = useState(false)
 
 useEffect(() => {
   getCharacters()
   .then(data => { 
     setCharacters(...characters , data)
   })
+  .catch(error => {
+    setError(true)
+  })
 }, [])
 
 const selectCharacter = (event) => {
-  // console.log(event.target.id,"EVENT")
-  //  characters.find(character => event.target.id === character.id )
   return characters.find(character => {
-    // console.log(character.id)
     if (parseInt(event.target.id) === character.id) {
       setSingleCharacter(character)
-    }
-    // ?event.target.id === character.id :
-    // setSingleCharacter(character)
-    
+    }  
   })
 }
 
@@ -39,35 +36,34 @@ const addFavoriteCharacter = (character) => {
 }
 
 const removeFavorite = (id) => {
-  // console.log(id, "ID")
-    return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
+  return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
 }
 
-
-
-    // console.log("FAVCARA",favoriteCharacters)
-  return (
-  //  <Switch>
-    <>
-      <Header/>
+return (
+  <>
+      <Header />
       <main className='App'>
+   <Switch>
         <Route exact path='/'>
             <Characters characters={characters} selectCharacter={selectCharacter}/>
         </Route>
         {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
-        <Route exact path={'/details'}>
-          <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
-        </Route>
+        <Route exact path={'/details'} render={() => {
+           return !singleCharacter ? 'loading' : <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
+        }}/>
+          {/* <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/> */}
+        {/* </Route> */}
         <Route exact path='/favorites'>
+        { !favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼 
+          
+        </h2>: 
+        //if it is false not zerooooooo, zero it false value 
         <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>
+        }
         </Route>
-        <Route exact path='/checkFavorites'>
-          <CheckFavorites checkFavorites={checkFavorites} removeFavorite={removeFavorite}/>
-        </Route>
-
+     </Switch>
       </main>
     </>
-    // </Switch>
     )
 }
 
