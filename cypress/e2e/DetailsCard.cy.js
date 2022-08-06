@@ -34,5 +34,6 @@ describe('Details Card', () => {
 
   it('Should be able to add character to favorites when clinking the add favorites button', () => {
     cy.get('.App > [href="/favorites"] > button').click();
+    cy.url().should('eq','http://localhost:3000/favorites')
   });
 })
