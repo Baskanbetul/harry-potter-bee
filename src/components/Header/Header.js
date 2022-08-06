@@ -9,7 +9,7 @@ const Header = () => {
         <Link to='/'>
         <h1>Welcome the Hogwarts</h1>
         </Link>
-        <h3>Select Your Character</h3>
+        {/* <h3>Select Your Character</h3> */}
       </header>
       <Link to='/favorites'>
         <button>Favorites</button>
