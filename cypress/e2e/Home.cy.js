@@ -1,4 +1,3 @@
-// describe('Home', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://fedeperin-harry-potter-api-en.herokuapp.com/characters', {
       fixture : 'harryPotter.json',
@@ -7,12 +6,23 @@
     cy.visit('http://localhost:3000/');
   })
 
-  it('The user should see the home page', () => {
+  it('Should see the home page', () => {
     cy.get('h1').contains('Welcome the Hogwarts');
     cy.get('h3').contains('Select Your Character');
-    cy.get('button').contains('Favorites')
+    cy.get('button').contains('Favorites') 
     cy.get('.characters').within(() => {
     cy.get('.character-poster').should('have.attr', 'src', 'https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png')  
-  })
-})
+    cy.get(':nth-child(1) > a > .name').contains('Harry James Potter')
+  });
+
+  it('Should be able to go back to the home page when clicking logo', () => {
+		cy.get('h1').click();
+		cy.url().should('eq', 'http://localhost:3000/');
+	});
+
+  it('Should be able to go to favorites when clinking the button', () => {
+		cy.get('button').click();
+		cy.url().should('eq', 'http://localhost:3000/favorites');
+	});
+ })
   
