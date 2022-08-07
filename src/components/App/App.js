@@ -7,6 +7,9 @@ import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
 import Error from '../Error/Error';
+import hogwartsFlag from '../../assets/hogwartsFlag.jpg';
+import harry from '../../assets/harry.gif';
+
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
@@ -35,6 +38,7 @@ const removeFavorite = (id) => {
 return (
     <>
       <Header />
+      <img className='harry-gif' src={harry}></img>
       <main className='App'>
         <Switch>
           <Route exact path='/'>
@@ -50,6 +54,9 @@ return (
            path='/*' 
             render={()=> <Error />}/>
         </Switch>
+        <div>
+          <img className='hogwards-flag' alt='flag of Hogwarts' src={hogwartsFlag}></img>
+        </div>
       </main>
     </>
  )

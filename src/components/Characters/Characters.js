@@ -31,5 +31,4 @@ export default Characters;
 
 Characters.propTypes = {
   characters: PropTypes.array
-  
 }

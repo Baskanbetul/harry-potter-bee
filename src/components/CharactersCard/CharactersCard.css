@@ -1,14 +1,23 @@
+/* @font-face {font-family: "Harry Potter";
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");
+} */
+
 .name {
-  color: rgb(224, 162, 162);
-  font-size: x-large;
-  /* margin: auto; */
-  margin-left: 25%;
+  color: #946b2d;
+  font-size: 1.8em;
+  text-align: center;
 }
 
 .characters-card {
-  width: 20vw;
-  height: 50vh; 
-  margin-top: 30%;
+  width: 20em;
+  height: 50em; 
+  /* margin-top: 30%; */
+  /* height: 30em; */
+  /* width: 25em; */
+  /* border: 0.15em solid green; */
+  margin-bottom: 7em;
 }
 
 .character-poster {
@@ -21,6 +30,8 @@
   border-radius: 25px;
   animation: wiggle 2s linear
 }
+
+
 
 /* #borderimg {
   border: 10px solid transparent;

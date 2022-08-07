@@ -1,6 +1,3 @@
-/* .App {
-  text-align: center;
-} */
 a {
   text-decoration: none;
   color: inherit;
@@ -9,12 +6,9 @@ a {
 html {
   width: 100%;
   height: 100%;
-  /* background-color: #DFE8DB; */
 }
 
 body{
-  display: flex;
-  justify-content: center;
   height: 100vh;
   width: 100vw;
   background: url('https://w0.peakpx.com/wallpaper/821/266/HD-wallpaper-hogwarts-castle-harry-potter-and-the-chamber-of-secrets.jpg') no-repeat center center fixed;
@@ -22,16 +16,20 @@ body{
   margin: 0;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
+.harry-gif {
+  height: 14em;
+  width: 14em;
+  margin-left: 60.5em;
+  margin-top: -4.2em;
+  border-radius: 40em;
+}
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
+.hogwards-flag {
+  height: 16em;
+  width: 30em;
+  border-radius: 7em;
+  margin-bottom: 10em;
+}
 
 main {
   width: 100vw;
@@ -41,27 +39,3 @@ main {
   align-items: center;
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-/* 
-.App-link {
-  color: #61dafb;
-} */
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
