@@ -17,7 +17,7 @@ const DetailsCard = ({ characters, addFavoriteCharacter, id }) => {
       <p className='details'>{singleCharacter.child[0]} {singleCharacter.child[1]} {singleCharacter.child[2]}</p>
     </div>
     <Link to ='/'>
-    <button>🪄 GO BACK 🪄</button>
+    <button className="go-back">🪄 GO BACK 🪄</button>
     </Link>
     <Link to ='/favorites'>
       <button onClick={() => addFavoriteCharacter(singleCharacter)}> 🪄 Add Favorites 🪄 </button>

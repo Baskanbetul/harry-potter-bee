@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './CharactersCard.css';
 import PropTypes from 'prop-types';
 
-const CharactersCard = ({ name, imageUrl, id}) => {
+
+const CharactersCard = ({ name, imageUrl, id, nickname}) => {
   return (
     <div className='characters-card'>
       {/* <Link to ={`/${nickname}`}> */}
@@ -11,8 +12,7 @@ const CharactersCard = ({ name, imageUrl, id}) => {
       <img className='character-poster' 
       id={id}
       src={imageUrl} alt={`${name} name`}></img>
-      {/* <p id="borderimg">border-image: url(border.png) 30 round;</p> */}
-      <p className='name'>{name}</p>
+      <p className='name'>{nickname}</p>
     </Link>
     </div>
   )
