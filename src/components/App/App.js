@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
+import Error from '../Error/Error';
 
 const App = () => {
  const [ characters, setCharacters ] = useState([])
@@ -45,6 +46,9 @@ return (
             {!favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼 </h2>: 
               <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>}
           </Route>
+          <Route
+           path='/*' 
+            render={()=> <Error />}/>
         </Switch>
       </main>
     </>
