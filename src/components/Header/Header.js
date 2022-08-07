@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <header className='hogwarts'>
         <Link to='/'>
-        <h1>Welcome the Hogwarts</h1>
+        <h1>Welcome to Hogwarts</h1>
         </Link>
         {/* <h3>Select Your Character</h3> */}
       </header>
