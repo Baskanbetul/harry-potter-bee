@@ -1,6 +1,10 @@
 /* .App {
   text-align: center;
 } */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 html {
   width: 100%;
