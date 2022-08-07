@@ -9,18 +9,20 @@ const DetailsCard = ({ characters, addFavoriteCharacter, id }) => {
     <>
     <div className='details-card'>
       <img className='character-poster' src={singleCharacter.image} alt={`${singleCharacter.name} information`}/>
-      <p className='details'>Name: {singleCharacter.character}</p>
-      <p className='details'>Nickname: {singleCharacter.nickname}</p>
-      <p className='details'>Is {singleCharacter.character} a hogwarts student?:{singleCharacter.hogwartsStudent ? 'YES' : 'NO'}</p>
-      <p className='details'>{singleCharacter.character}' house:{singleCharacter.hogwartsHouse}</p>
-      <p className='details'>Interpreted By:{singleCharacter.interpretedBy}</p>
-      <p className='details'>{singleCharacter.child[0]} {singleCharacter.child[1]} {singleCharacter.child[2]}</p>
+      <div className="info-container">
+        <p className='details'>{singleCharacter.character}</p>
+        <p className='details'>Nickname: {singleCharacter.nickname}</p>
+        <p className='details'>{singleCharacter.character} is {singleCharacter.hogwartsStudent ? 'a hogwarts student.' : 'not a hogwarts student.'}</p>
+        <p className='details'>{singleCharacter.character}'s house is {singleCharacter.hogwartsHouse}.</p>
+        <p className='details'>This character is interpreted by {singleCharacter.interpretedBy}.</p>
+        <p className='details'>{singleCharacter.child ? singleCharacter.child.join(' and ') : ' '}</p> 
+      </div>
     </div>
     <Link to ='/'>
     <button className="go-back">🪄 GO BACK 🪄</button>
     </Link>
     <Link to ='/favorites'>
-      <button onClick={() => addFavoriteCharacter(singleCharacter)}> 🪄 Add Favorites 🪄 </button>
+      <button className='add-favorite' onClick={() => addFavoriteCharacter(singleCharacter)}> 🪄 Add Favorites 🪄 </button>
     </Link>
     </>
   )
