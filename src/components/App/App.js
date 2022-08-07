@@ -48,7 +48,7 @@ return (
             <Characters characters={characters} selectCharacter={selectCharacter}/>
         </Route>
         {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
-        <Route exact path={'/details'} render={() => {
+        <Route exact path={'/details/:id'} render={() => {
            return !singleCharacter ? 'loading' : <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
         }}/>
           {/* <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/> */}

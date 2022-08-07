@@ -7,7 +7,7 @@ const CharactersCard = ({ name, imageUrl, id, nickname, selectCharacter }) => {
   return (
     <div className='characters-card'>
       {/* <Link to ={`/${nickname}`}> */}
-      <Link to ='/details'>
+      <Link to ={`/details/${id}`}>
       <img className='character-poster' 
       id={id}
       src={imageUrl} alt={`${name} name`} 
