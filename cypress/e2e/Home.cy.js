@@ -8,7 +8,7 @@ describe('Home', () => {
   })
 
   it('Should see the home page', () => {
-    cy.get('h1').contains('Welcome the Hogwarts');
+    cy.get('h1').contains('Welcome to Hogwarts');
     // cy.get('h3').contains('Select Your Character');
     cy.get('button').contains('Favorites') 
     cy.get('.characters').within(() => {

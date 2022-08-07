@@ -6,8 +6,8 @@ describe('Details Card', () => {
     });
     cy.visit('http://localhost:3000/');
     cy.get('.characters > :nth-child(1)').click()
-    cy.url().should('eq', 'http://localhost:3000/details');
-    cy.get('h1').contains('Welcome the Hogwarts');
+    cy.url().should('eq', 'http://localhost:3000/details/1');
+    cy.get('h1').contains('Welcome to Hogwarts');
   })
 
   it('Should be able to go to favorites when clinking the button', () => {
