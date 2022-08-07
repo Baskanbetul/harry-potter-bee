@@ -7,6 +7,19 @@
 .hogwarts {
   text-align: center;
   color: rgb(182, 163, 138);
+  display: flex;
+  justify-content: space-around;
+  margin-left: 13em;
+  margin-top:2em
+}
+
+.harry-gif {
+  height: 14em;
+  width: 14em;
+  /* margin-left: 60.5em;
+  margin-top: -4.2em; */
+  border-radius: 40em;
+  margin-left: 5em;
 }
 
 h1 {
@@ -28,7 +41,7 @@ h1:focus, h1:hover {
   10px 7px 0 black;
 }
 
-button {
+.favorites {
   animation-name: my-animation;
   animation-duration: 3s;
   animation-direction: alternate;
@@ -51,7 +64,6 @@ button {
   }
   to {
     background-color: #946b2d;
-    ;
     width: 60px;
     top: 70px;
   }

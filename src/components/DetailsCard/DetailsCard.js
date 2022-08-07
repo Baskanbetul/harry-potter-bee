@@ -18,12 +18,14 @@ const DetailsCard = ({ characters, addFavoriteCharacter, id }) => {
         <p className='details'>{singleCharacter.child ? singleCharacter.child.join(' and ') : ' '}</p> 
       </div>
     </div>
+    <div className='goback-fav'>
     <Link to ='/'>
     <button className="go-back">🪄 GO BACK 🪄</button>
     </Link>
     <Link to ='/favorites'>
-      <button className='add-favorite' onClick={() => addFavoriteCharacter(singleCharacter)}> 🪄 Add Favorites 🪄 </button>
+      <button className='add-favorite' onClick={() => addFavoriteCharacter(singleCharacter)}> 🪄 ADD FAVORITES 🪄 </button>
     </Link>
+    </div>
     </>
   )
 }

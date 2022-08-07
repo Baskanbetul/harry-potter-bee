@@ -8,7 +8,7 @@ import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
 import Error from '../Error/Error';
 import hogwartsFlag from '../../assets/hogwartsFlag.jpg';
-import harry from '../../assets/harry.gif';
+// import harry from '../../assets/harry.gif';
 
 
 const App = () => {
@@ -38,8 +38,8 @@ const removeFavorite = (id) => {
 return (
     <>
       <Header />
-      <img className='harry-gif' src={harry}></img>
       <main className='App'>
+      {/* <img className='harry-gif' src={harry}></img> */}
         <Switch>
           <Route exact path='/'>
               <Characters characters={characters}/>

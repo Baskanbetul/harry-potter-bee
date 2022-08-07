@@ -1,6 +1,7 @@
 a {
   text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
 html {
@@ -17,13 +18,18 @@ body{
   margin: 0;
 }
 
-.harry-gif {
+.App {
+  displey: flex;
+
+}
+
+/* .harry-gif {
   height: 14em;
   width: 14em;
   margin-left: 60.5em;
   margin-top: -4.2em;
   border-radius: 40em;
-}
+} */
 
 .hogwards-flag {
   height: 16em;
