@@ -2,13 +2,10 @@ import React from 'react';
 import './Characters.css';
 import CharactersCard from '../CharactersCard/CharactersCard';
 import DetailsCard from '../DetailsCard/DetailsCard';
+import PropTypes from 'prop-types';
 
-const Characters = ( { characters, selectCharacter }) => {
-  // console.log(characters,"CHA")
+const Characters = ( { characters }) => {
   const charactersCard = characters.map(character => {
-    // console.log(character,"CHARACTER")
-
-    // console.log(character.hogwartsStudent, "ID")
     return (
       <CharactersCard 
       id={character.id}
@@ -20,7 +17,6 @@ const Characters = ( { characters, selectCharacter }) => {
       hogwartsHouse={character.hogwartsHouse}
       interpretedBy={character.interpretedBy}
       child={character.child}
-      selectCharacter={selectCharacter}
       />
     );
   });
@@ -28,8 +24,12 @@ const Characters = ( { characters, selectCharacter }) => {
     <section className='characters'>
       {charactersCard}
     </section>
-    
   )
 }
 
 export default Characters;
+
+Characters.propTypes = {
+  characters: PropTypes.array
+  
+}

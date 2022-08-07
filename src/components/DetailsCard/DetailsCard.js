@@ -1,9 +1,10 @@
 import React from "react";
 import './DetailsCard.css';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const DetailsCard = ({ singleCharacter, addFavoriteCharacter}) => {
-  // console.log(singleCharacter, "SINGLE")
+const DetailsCard = ({ characters, addFavoriteCharacter, id }) => {
+  const singleCharacter = characters.find(character => parseInt(id) === character.id)
   return (
     <>
     <div className='details-card'>
@@ -26,3 +27,9 @@ const DetailsCard = ({ singleCharacter, addFavoriteCharacter}) => {
 }
 
 export default DetailsCard
+
+DetailsCard.propTypes = {
+  characters : PropTypes.array,
+  addFavoriteCharacter : PropTypes.func,
+  id : PropTypes.string
+}
