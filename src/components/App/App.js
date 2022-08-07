@@ -23,14 +23,6 @@ useEffect(() => {
   })
 }, [])
 
-const selectCharacter = (event) => {
-  return characters.find(character => {
-    if (parseInt(event.target.id) === character.id) {
-      setSingleCharacter(character)
-    }  
-  })
-}
-
 const addFavoriteCharacter = (character) => {
   setFavoriteCharacters([ ...favoriteCharacters, character ])
 }
@@ -40,32 +32,23 @@ const removeFavorite = (id) => {
 }
 
 return (
-  <>
+    <>
       <Header />
       <main className='App'>
-   <Switch>
-        <Route exact path='/'>
-            <Characters characters={characters} selectCharacter={selectCharacter}/>
-        </Route>
-        {/* <Route path={`/details${singleCharacter.name}${singleCharacter.id}`}> */}
-        <Route exact path={'/details'} render={() => {
-           return !singleCharacter ? 'loading' : <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/>
-        }}/>
-          {/* <DetailsCard singleCharacter={singleCharacter} addFavoriteCharacter={addFavoriteCharacter}/> */}
-        {/* </Route> */}
-        <Route exact path='/favorites'>
-        { !favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼 
-          
-        </h2>: 
-        //if it is false not zerooooooo, zero it false value 
-        <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>
-        }
-        </Route>
-     </Switch>
+        <Switch>
+          <Route exact path='/'>
+              <Characters characters={characters}/>
+          </Route>
+          {characters.length && <Route exact path={'/details/:id'} render={( {match} ) => {
+            return <DetailsCard characters={characters} addFavoriteCharacter={addFavoriteCharacter} id={match.params.id}/>}}/>}
+          <Route exact path='/favorites'>
+            {!favoriteCharacters.length ? <h2>🧙🏻‍♀️ Hey, don't you have favorite character, Ca'mon it is hogwarts' world pick one them! 🧙🏼 </h2>: 
+              <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>}
+          </Route>
+        </Switch>
       </main>
     </>
-    )
+ )
 }
-
 
 export default App;

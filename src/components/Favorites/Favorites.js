@@ -1,12 +1,12 @@
 import React from "react";
 import './Favorites.css';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Favorites = ({ favoriteCharacters, removeFavorite, id }) => {
-  // console.log(favoriteCharacters)
+const Favorites = ({ favoriteCharacters, removeFavorite }) => { //, id 
   const formatCharacters = favoriteCharacters.map(favoriteCharacter => {
     return (
-     <div key={favoriteCharacter.id}>
+      <div key={favoriteCharacter.id}>
       <img className='character-poster' src={favoriteCharacter.image} alt={`${favoriteCharacter.name} information`}/>
       <p>Name: {favoriteCharacter.character}</p>
       <p>Nickname: {favoriteCharacter.nickname}</p>
@@ -29,3 +29,8 @@ const Favorites = ({ favoriteCharacters, removeFavorite, id }) => {
 }
 
 export default Favorites;
+
+Favorites.propTypes = {
+  favoriteCharacters: PropTypes.array,
+  removeFavorite: PropTypes.func
+}
