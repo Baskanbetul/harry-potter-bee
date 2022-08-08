@@ -59,7 +59,7 @@
 }
 
 @keyframes wiggle {
-
+  
   0%,
   15% {
     transform: rotateZ(0);
@@ -90,3 +90,4 @@
     transform: rotateZ(0);
   }
 }
+

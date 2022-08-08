@@ -19,17 +19,8 @@ body{
 }
 
 .App {
-  displey: flex;
-
+  display: flex;
 }
-
-/* .harry-gif {
-  height: 14em;
-  width: 14em;
-  margin-left: 60.5em;
-  margin-top: -4.2em;
-  border-radius: 40em;
-} */
 
 .hogwards-flag {
   height: 16em;

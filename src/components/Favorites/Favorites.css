@@ -1,16 +1,24 @@
 .favorite-container {
-    display: flex;
-    align-items: center;
-    display: flex;
-    align-items: flex-end;
-    /* margin-top: -6em; */
-  }
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: flex-end;
+}
  
 .favorite-info {
   margin-left: 5em;
   font-size: 1em;
   color: aliceblue;
-    /* animation: glow 2s ease-in-out infinite alternate; */
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(230, 146, 146), 0 0 20px rgb(156, 31, 31);
+  }
+  to { 
+    text-shadow: 0 0 20px rgb(81, 94, 233), 0 0 30px #29306c;
+  }
 }
 
 .trash-btn {
@@ -36,7 +44,6 @@
   position: relative;
   z-index: 0;
   border-radius: 10px;
-
 }
 
 .trash-btn:before, .go-back-bttn:before {
@@ -85,12 +92,6 @@
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
-
-
-/* 
-.favorites {
-  margin-bottom: 50em;
-} */
 
  
   

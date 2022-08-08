@@ -22,12 +22,10 @@ const Favorites = ({ favoriteCharacters, removeFavorite }) => {
   })
   return (
     <>
-   {/* <div className="favorites"> */}
-    {formatCharacters}
-    <Link to ='/'>
-    <button className='go-back-bttn'>GO BACK</button>
-    </Link>
-    {/* </div> */}
+      {formatCharacters}
+      <Link to ='/'>
+        <button className='go-back-bttn'>GO BACK</button>
+      </Link>
     </>
   )
 }

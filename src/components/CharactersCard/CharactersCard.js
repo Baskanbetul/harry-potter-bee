@@ -7,13 +7,10 @@ import PropTypes from 'prop-types';
 const CharactersCard = ({ name, imageUrl, id, nickname}) => {
   return (
     <div className='characters-card'>
-      {/* <Link to ={`/${nickname}`}> */}
       <Link to ={`/details/${id}`}>
-      <img className='character-poster' 
-      id={id}
-      src={imageUrl} alt={`${name} name`}></img>
-      <p className='name'>{nickname}</p>
-    </Link>
+        <img className='character-poster' id={id} src={imageUrl} alt={`${name} name`}></img>
+        <p className='name'>{nickname}</p>
+      </Link>
     </div>
   )
 }

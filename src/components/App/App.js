@@ -8,41 +8,38 @@ import DetailsCard from '../DetailsCard/DetailsCard';
 import Favorites from '../Favorites/Favorites';
 import Error from '../Error/Error';
 import hogwartsFlag from '../../assets/hogwartsFlag.jpg';
-// import harry from '../../assets/harry.gif';
-
 
 const App = () => {
- const [ characters, setCharacters ] = useState([])
- const [ singleCharacter,  setSingleCharacter ] = useState({})
- const [ favoriteCharacters, setFavoriteCharacters ] = useState([])
- const [ error, setError ] = useState(false)
+  const [ characters, setCharacters ] = useState([])
+  const [ singleCharacter,  setSingleCharacter ] = useState({})
+  const [ favoriteCharacters, setFavoriteCharacters ] = useState([])
+  const [ error, setError ] = useState(false)
 
-useEffect(() => {
-  getCharacters()
-  .then(data => { 
-    setCharacters(...characters , data)
-  })
-  .catch(error => {
-    setError(true)
-  })
-}, [])
+  useEffect(() => {
+    getCharacters()
+    .then(data => { 
+      setCharacters(...characters , data)
+    })
+    .catch(error => {
+      setError(true)
+    })
+  }, [])
 
-const addFavoriteCharacter = (character) => {
-  setFavoriteCharacters([ ...favoriteCharacters, character ])
-}
+  const addFavoriteCharacter = (character) => {
+    setFavoriteCharacters([ ...favoriteCharacters, character ])
+  }
 
-const removeFavorite = (id) => {
-  return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
-}
+  const removeFavorite = (id) => {
+    return setFavoriteCharacters(favoriteCharacters.filter(favorite => id !== favorite.id))
+  }
 
-return (
+  return (
     <>
       <Header />
       <main className='App'>
-      {/* <img className='harry-gif' src={harry}></img> */}
         <Switch>
           <Route exact path='/'>
-              <Characters characters={characters}/>
+            <Characters characters={characters}/>
           </Route>
           {characters.length && <Route exact path={'/details/:id'} render={( {match} ) => {
             return <DetailsCard characters={characters} addFavoriteCharacter={addFavoriteCharacter} id={match.params.id}/>}}/>}
@@ -51,15 +48,14 @@ return (
               <Favorites favoriteCharacters={favoriteCharacters} removeFavorite={removeFavorite}/>}
           </Route>
           <Route
-           path='/*' 
-            render={()=> <Error />}/>
+            path='/*' render={()=> <Error />}/>
         </Switch>
-        <div>
-          <img className='hogwards-flag' alt='flag of Hogwarts' src={hogwartsFlag}></img>
-        </div>
+          <div>
+            <img className='hogwards-flag' alt='flag of Hogwarts' src={hogwartsFlag}></img>
+          </div>
       </main>
     </>
- )
+  )
 }
 
 export default App;

@@ -6,7 +6,7 @@ const Error = () => {
 		<>
 			<div className="error-messaging">
 				<h4>🥹 Something is going wrong! 🥹</h4>
-				<p>Please return to home page using the Harry Potter link above.</p>
+				<p>☝ Please return to home page using the Harry Potter link above.☝</p>
 			</div>
 		</>
 	);

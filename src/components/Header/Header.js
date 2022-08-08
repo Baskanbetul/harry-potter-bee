@@ -9,14 +9,11 @@ const Header = () => {
     <>
       <header className='hogwarts'>
         <Link to='/'>
-        <h1>Welcome to Hogwarts</h1>
-        <img className='harry-gif' src={harry}></img>
+          <h1>Welcome to Hogwarts</h1>
+          <img className='harry-gif' src={harry}></img>
         </Link>
       </header>
-      <Link to='/favorites'>
-        <button className='favorites' >Favorites</button>
-      </Link>
-     </>
+    </>
   )
 }
 
