@@ -18,7 +18,7 @@ Welcome to Hogwarts is an app to show more information about characters to kids.
 This app fetches data from [Harry Potter API](https://fedeperin-harry-potter-api-en.herokuapp.com/characters).
 
 ### Deployment
-Project can be viewed [here]().
+👉 [Click here](https://harry-potter-bee.herokuapp.com/).
 
 ### Technologies
 - JavaScript
