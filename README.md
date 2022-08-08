@@ -28,6 +28,7 @@ This app fetches data from [Harry Potter API](https://fedeperin-harry-potter-api
 - CSS
 - API fetch
 - Cypress (E2E testing)
+- Heroku
 - Figma & FigmaJam
 
 ### Set Up
@@ -35,7 +36,7 @@ This app fetches data from [Harry Potter API](https://fedeperin-harry-potter-api
 2. `cd` into the directory.
 3. Run `npm install`.
 4. To run tests, run `npm run cypress`.
-5. Start the server by running `npm start` and view at http://localhost:8080/.
+5. Start the server by running `npm start` and view at http://localhost:3000/.
 6. Enter `control + c` to stop the server at any time.
 
 ### Features
