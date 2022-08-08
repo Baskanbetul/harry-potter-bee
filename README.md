@@ -40,6 +40,8 @@ This app fetches data from [Harry Potter API](https://fedeperin-harry-potter-api
 
 ### Features
 
+![Welcome to Hogwarts](https://media.giphy.com/media/xjVPFKGB2E5GQTH18H/giphy.gif)
+
 - User can view all characters on page load
 - User can click on a character and see their details
 - User can favorite and unfavorite a character 
