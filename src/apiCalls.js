@@ -7,4 +7,4 @@ export const getCharacters = () => {
       return response.json()
     }
   })
-}
+} 
