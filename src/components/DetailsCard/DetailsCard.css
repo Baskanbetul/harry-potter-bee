@@ -9,7 +9,7 @@
   font-style: oblique;
   font-size: 1.3em;
   margin-top: 3em;
-  animation: glow 2s ease-in-out infinite alternate;
+  /* animation: glow 2s ease-in-out infinite alternate; */
 }
 
 @keyframes glow {
