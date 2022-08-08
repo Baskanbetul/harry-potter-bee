@@ -11,7 +11,7 @@ describe('Details Card', () => {
   })
 
   it('Should be able to go to favorites when clinking the button', () => {
-		cy.get('#root > :nth-child(2) > button').click();
+		cy.get('.favorites').click();
 		cy.url().should('eq','http://localhost:3000/favorites');
 	});
   
@@ -20,7 +20,7 @@ describe('Details Card', () => {
       cy.get('.character-poster').should('have.attr', 'src', 'https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png')
       cy.contains('Harry James Potter');
       cy.contains('Harry');
-      cy.contains('YES');
+      cy.contains('Harry James Potter is a hogwarts student.');
       cy.contains('Gryffindor');
       cy.contains('Daniel Radcliffe');
       cy.contains('James Sirius Potter') 
@@ -33,7 +33,7 @@ describe('Details Card', () => {
   });
 
   it('Should be able to add character to favorites when clinking the add favorites button', () => {
-    cy.get('.App > [href="/favorites"] > button').click();
+    cy.get('.favorites').click();
     cy.url().should('eq','http://localhost:3000/favorites')
   });
 })

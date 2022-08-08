@@ -9,12 +9,12 @@ describe('Home', () => {
 
   it('Should see the home page', () => {
     cy.get('h1').contains('Welcome to Hogwarts');
-    // cy.get('h3').contains('Select Your Character');
-    cy.get('button').contains('Favorites') 
+    cy.get('button').contains('Favorites');
     cy.get('.characters').within(() => {
-    cy.get('.character-poster').should('have.attr', 'src', 'https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png')  
-    cy.get(':nth-child(1) > a > .name').contains('Harry James Potter')
+      cy.get('.character-poster').should('have.attr', 'src', 'https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png')  
+      cy.get('.name').contains('Harry');
   });
+})
 
   it('Should be able to go back to the home page when clicking logo', () => {
 		cy.get('h1').click();
@@ -30,8 +30,8 @@ describe('Home', () => {
     cy.get('.characters').within(() => {
       cy.get('.character-poster').should('have.attr', 'src', 'https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png')  
       cy.get(':nth-child(1) > a > .name').click();
-		  cy.url().should('eq', 'http://localhost:3000/details');
+		  cy.url().should('eq', 'http://localhost:3000/details/1');
     });
     });
   })
-})
+
