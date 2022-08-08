@@ -36,7 +36,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className='App'>
+      <main className='app'>
         <Switch>
           <Route exact path='/'>
             <Characters characters={characters}/>
