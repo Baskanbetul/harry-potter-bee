@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const Favorites = ({ favoriteCharacters, removeFavorite }) => {
+  window.scroll(0,0);
   const formatCharacters = favoriteCharacters.map(favoriteCharacter => {
     return (
       <div className='favorite-container' key={favoriteCharacter.id}>

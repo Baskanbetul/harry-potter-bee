@@ -2,6 +2,7 @@ import React from 'react';
 import './Error.css';
  
 const Error = () => {
+  window.scroll(0,0);
 	return (
 		<>
 			<div className="error-messaging">

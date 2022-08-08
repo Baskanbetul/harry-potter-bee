@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const DetailsCard = ({ characters, addFavoriteCharacter, id }) => {
+  window.scroll(0,0);
   const singleCharacter = characters.find(character => parseInt(id) === character.id)
   return (
     <>
