@@ -16,15 +16,10 @@ describe('Error', () => {
     cy.get('p').contains('Please return to home page using the Harry Potter link above.')
   })
 
-  it('Should be able to go to favorites when clinking the button', () => {
-		cy.get('button').click();
-		cy.url().should('eq', 'http://localhost:3000/favorites');
+  it('Should be able to go back to the home page when clicking logo', () => {
+		cy.get('h1').click();
+		cy.url().should('eq', 'http://localhost:3000/');
 	});
-
-  // it('Should be able to go back to the home page when clicking logo', () => {
-	// 	cy.get('h1').click();
-	// 	cy.url().should('eq', 'http://localhost:3000/');
-	// });
 
 })
  
