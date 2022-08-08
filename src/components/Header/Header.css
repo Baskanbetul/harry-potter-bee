@@ -1,101 +1,54 @@
+@font-face {font-family: "Harry Potter";
+  src: url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");
+}
+
 .hogwarts {
   text-align: center;
   color: rgb(182, 163, 138);
-  margin-top: 5%;
-  margin-bottom: -5%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 13em;
+  margin-top:2em
 }
 
-button {
-  border: none;
-    background-color: teal;
-    color: rgb(105, 21, 21);
-    padding: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 0.5rem;
-    border-radius: 6px 22px; 
-    color: rgb(236, 240, 241); 
+.harry-gif {
+  height: 14em;
+  width: 14em;
+  border-radius: 40em;
+  margin-left: 5em;
+}
+
+h1 {
+  color: #5d5d5d;
+  font-family: Harry Potter, Arial;
+  font-size:4em;
+  transition:all 0.1s ;
+  margin:0;
+  margin-top: 1em;
+}
+
+h1:focus, h1:hover {
+  color: rgb(131, 85, 17);
+  text-shadow:
+  2px 3px 0 #740001,
+  4px 4px 0 #1a472a,  
+  6px 5px 0 #0e1a40,
+  8px  6px 0 #ecb939,
+  10px 7px 0 black;
+}
+
+@keyframes my-animation {
+  from {
+    background-color: #ecb939;
+    width: 90px;
+    top: 40px;
   }
-
-button:hover {
-   border-radius: 22px 6px;
-    background: rgb(16, 68, 37);
-    cursor: pointer;
-}
-
-
-.glow-on-hover {
-  /* width: 220px;
-  height: 50px; */
-  /* border: none; */
-  /* outline: none; */
-  /* color: #fff; */
-  /* background: rgb(104, 45, 45); */
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-}
-
-.glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-}
-
-.glow-on-hover:active {
-  background-color: teal;
-}  
-  
-.glow-on-hover:active:after {
-  background: transparent;
-}
-
-.glow-on-hover:hover:before {
-  opacity: 1;
-}
-
-.glow-on-hover:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: teal;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 400% 0;
-  }
-
-  100% {
-    background-position: 0 0;
+  to {
+    background-color: #946b2d;
+    width: 60px;
+    top: 70px;
   }
 }
-
-
-
-
-
-
-
-
+ 
